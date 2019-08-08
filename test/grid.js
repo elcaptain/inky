@@ -16,7 +16,7 @@ describe('Container', () => {
       <html>
         <head></head>
         <body>
-          <table align="center" class="container">
+          <table class="container" role="presentation">
             <tbody>
               <tr>
                 <td></td>
@@ -32,7 +32,7 @@ describe('Container', () => {
   it('creates a container table', () => {
     var input = '<container></container>';
     var expected = `
-      <table align="center" class="container">
+      <table class="container" role="presentation">
         <tbody>
           <tr>
             <td></td>
@@ -49,7 +49,7 @@ describe('Grid', () => {
   it('creates a row', () => {
     var input = '<row></row>';
     var expected =  `
-      <table class="row">
+      <table class="row" role="presentation">
         <tbody>
           <tr></tr>
         </tbody>
@@ -63,70 +63,16 @@ describe('Grid', () => {
     var input = '<columns large="12" small="12">One</columns>';
     var expected = `
       <th class="small-12 large-12 columns first last">
-        <table>
-          <tbody>
-            <tr>
-              <th>One</th>
-              <th class="expander"></th>
-            </tr>
-          </tbody>
+        <table role="presentation">
+          <tr>
+            <th>One</th>
+            <th class="expander"></th>
+          </tr>
         </table>
       </th>
     `;
 
     compare(input, expected);
-  });
-
-  it('creates a single column with first and last classes with no-expander', function () {
-    var input = '<columns large="12" small="12" no-expander>One</columns>';
-    var expected = `
-      <th class="small-12 large-12 columns first last">
-        <table>
-          <tbody>
-            <tr>
-              <th>One</th>
-            </tr>
-          </tbody>
-        </table>
-      </th>
-    `;
-
-  compare(input, expected);
-  });
-
-  it('creates a single column with first and last classes with no-expander="false"', function () {
-    var input = '<columns large="12" small="12" no-expander="false">One</columns>';
-    var expected = `
-      <th class="small-12 large-12 columns first last">
-        <table>
-          <tbody>
-            <tr>
-              <th>One</th>
-              <th class="expander"></th>
-            </tr>
-          </tbody>
-        </table>
-      </th>
-    `;
-
-  compare(input, expected);
-  });
-
-  it('creates a single column with first and last classes with no-expander="true"', function () {
-    var input = '<columns large="12" small="12" no-expander="true">One</columns>';
-    var expected = `
-      <th class="small-12 large-12 columns first last">
-        <table>
-          <tbody>
-            <tr>
-              <th>One</th>
-            </tr>
-          </tbody>
-        </table>
-      </th>
-    `;
-
-  compare(input, expected);
   });
 
   it('creates two columns, one first, one last', function () {
@@ -136,21 +82,17 @@ describe('Grid', () => {
     `;
     var expected = `
       <th class="small-12 large-6 columns first">
-        <table>
-          <tbody>
-            <tr>
-              <th>One</th>
-            </tr>
-          </tbody>
+        <table role="presentation">
+          <tr>
+            <th>One</th>
+          </tr>
         </table>
       </th>
       <th class="small-12 large-6 columns last">
-        <table>
-          <tbody>
-            <tr>
-              <th>Two</th>
-            </tr>
-          </tbody>
+        <table role="presentation">
+          <tr>
+            <th>Two</th>
+          </tr>
         </table>
       </th>
     `;
@@ -166,30 +108,24 @@ describe('Grid', () => {
     `;
     var expected = `
       <th class="small-12 large-4 columns first">
-        <table>
-          <tbody>
-            <tr>
-              <th>One</th>
-            </tr>
-          </tbody>
+        <table role="presentation">
+          <tr>
+            <th>One</th>
+          </tr>
         </table>
       </th>
       <th class="small-12 large-4 columns">
-        <table>
-          <tbody>
-            <tr>
-              <th>Two</th>
-            </tr>
-          </tbody>
+        <table role="presentation">
+          <tr>
+            <th>Two</th>
+          </tr>
         </table>
       </th>
       <th class="small-12 large-4 columns last">
-        <table>
-          <tbody>
-            <tr>
-              <th>Three</th>
-            </tr>
-          </tbody>
+        <table role="presentation">
+          <tr>
+            <th>Three</th>
+          </tr>
         </table>
       </th>
     `;
@@ -201,13 +137,11 @@ describe('Grid', () => {
     var input = '<columns class="small-offset-8 hide-for-small">One</columns>';
     var expected = `
       <th class="small-offset-8 hide-for-small small-12 large-12 columns first last">
-        <table>
-          <tbody>
-            <tr>
-              <th>One</th>
-              <th class="expander"></th>
-            </tr>
-          </tbody>
+        <table role="presentation">
+          <tr>
+            <th>One</th>
+            <th class="expander"></th>
+          </tr>
         </table>
       </th>
     `;
@@ -223,21 +157,17 @@ describe('Grid', () => {
     `;
     var expected = `
       <th class="small-4 large-4 columns first">
-        <table>
-          <tbody>
-            <tr>
-              <th>One</th>
-            </tr>
-          </tbody>
+        <table role="presentation">
+          <tr>
+            <th>One</th>
+          </tr>
         </table>
       </th>
       <th class="small-8 large-8 columns last">
-        <table>
-          <tbody>
-            <tr>
-              <th>Two</th>
-            </tr>
-          </tbody>
+        <table role="presentation">
+          <tr>
+            <th>Two</th>
+          </tr>
         </table>
       </th>
     `;
@@ -252,21 +182,17 @@ describe('Grid', () => {
     `;
     var expected = `
       <th class="small-12 large-4 columns first">
-        <table>
-          <tbody>
-            <tr>
-              <th>One</th>
-            </tr>
-          </tbody>
+        <table role="presentation">
+          <tr>
+            <th>One</th>
+          </tr>
         </table>
       </th>
       <th class="small-12 large-8 columns last">
-        <table>
-          <tbody>
-            <tr>
-              <th>Two</th>
-            </tr>
-          </tbody>
+        <table role="presentation">
+          <tr>
+            <th>Two</th>
+          </tr>
         </table>
       </th>
     `;
@@ -277,22 +203,20 @@ describe('Grid', () => {
   it('supports nested grids', () => {
     var input = '<row><columns><row></row></columns></row>'
     var expected = `
-      <table class="row">
+      <table class="row" role="presentation">
         <tbody>
           <tr>
             <th class="small-12 large-12 columns first last">
-              <table>
-                <tbody>
-                  <tr>
-                    <th>
-                      <table class="row">
-                        <tbody>
-                          <tr></tr>
-                        </tbody>
-                      </table>
-                    </th>
-                  </tr>
-                </tbody>
+              <table role="presentation">
+                <tr>
+                  <th>
+                    <table class="row" role="presentation">
+                      <tbody>
+                        <tr></tr>
+                      </tbody>
+                    </table>
+                  </th>
+                </tr>
               </table>
             </th>
           </tr>
@@ -302,40 +226,14 @@ describe('Grid', () => {
 
     compare(input, expected);
   });
-
-  it('transfers attributes to the final HTML', () => {
-    var input = '<row dir="rtl"><columns dir="rtl" valign="middle" align="center">One</columns></row>';
-    var expected = `
-      <table dir="rtl" class="row">
-        <tbody>
-          <tr>
-            <th class="small-12 large-12 columns first last" dir="rtl" valign="middle" align="center">
-              <table>
-                <tbody>
-                  <tr>
-                    <th>One</th>
-                    <th class="expander"></th>
-                  </tr>
-                </tbody>
-              </table>
-            </th>
-          </tr>
-        </tbody>
-      </table>
-    `;
-
-    compare(input, expected)
-  });
 });
 
 describe('Block Grid', () => {
   it('returns the correct block grid syntax', () => {
     var input = '<block-grid up="4"></block-grid>';
     var expected = `
-      <table class="block-grid up-4">
-        <tbody>
-          <tr></tr>
-        </tbody>
+      <table class="block-grid up-4" role="presentation">
+        <tr></tr>
       </table>
     `;
 
@@ -345,10 +243,8 @@ describe('Block Grid', () => {
   it('copies classes to the final HTML output', () => {
     var input = '<block-grid up="4" class="show-for-large"></block-grid>';
     var expected = `
-      <table class="block-grid up-4 show-for-large">
-        <tbody>
-          <tr></tr>
-        </tbody>
+      <table class="block-grid up-4 show-for-large" role="presentation">
+        <tr></tr>
       </table>
     `;
 
